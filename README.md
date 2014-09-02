@@ -9,7 +9,9 @@ My plugins: [WordWarning](https://github.com/gdude2002/WordWarning) | [Painter](
 
 StopServer is a simple plugin that allows you to stop the server after a certain amount of inactivity.
 The latest jar is always available [here](http://bamboo.gserv.me/browse/PLUG-STOP/latest/artifact/JOB1/Version-agnostic-jar/StopServer.jar).
-Remember, your server must be running **Java 7 or later**. If you need me to compile for lower versions, let me know and I'll make it happen.
+
+**As per request, this plugin now supports Java 6. You should still update to Java 7 if possible, though, as it contains numerous
+security fixes and speed improvements.**
 
 Usage
 =====
