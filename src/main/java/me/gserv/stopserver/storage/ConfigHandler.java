@@ -26,26 +26,21 @@ public class ConfigHandler {
     public void update() {
         String version = this.getVersion();
 
-        switch (version) {
-            case "":
-                // No version in the config
-                this.config.set("version", this.plugin.getDescription().getVersion());
-                this.reload();
-                break;
-            case "0.0.1":
-                // Correct version
-                break;
-            default:
-                this.plugin.getLogger().warning(
-                        String.format("Unknown version in config: %s", version)
-                );
-                this.plugin.getLogger().warning(
-                        String.format("Setting to %s", this.plugin.getDescription().getVersion())
-                );
+        if (version.equals("")) { // No version in the config
+            this.config.set("version", this.plugin.getDescription().getVersion());
+            this.reload();
 
-                this.config.set("version", this.plugin.getDescription().getVersion());
-                this.reload();
-                break;
+        } else if (!version.equals("0.0.1")) {
+            this.plugin.getLogger().warning(
+                    String.format("Unknown version in config: %s", version)
+            );
+            this.plugin.getLogger().warning(
+                    String.format("Setting to %s", this.plugin.getDescription().getVersion())
+            );
+
+            this.config.set("version", this.plugin.getDescription().getVersion());
+            this.reload();
+
         }
     }
 
