@@ -26,7 +26,7 @@ public class ConfigHandler {
     public void update() {
         String version = this.getVersion();
 
-        if (version.equals("")) { // No version in the config
+        if (version.isEmpty()) { // No version in the config
             this.config.set("version", this.plugin.getDescription().getVersion());
             this.reload();
 
