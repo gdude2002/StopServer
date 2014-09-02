@@ -32,6 +32,13 @@ public final class StopServer extends JavaPlugin {
         // Load up the config
         this.config = new ConfigHandler(this);
         this.time = this.config.getTicks();
+
+        if (this.time.getTicks() == -1L) {
+            this.getLogger().warning("Invalid time, disabling..");
+            this.getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+
         this.task = new StopTask(this);
 
 //        this.getLogger().info(String.format("Scheduling shutdown in %s", this.time.getFormattedTime()));
