@@ -1,0 +1,8 @@
+name: StopServer
+version: 0.0.1
+description: Stop the server after some amount of inactivity
+
+author: Gareth Coles
+
+main: me.gserv.stopserver.StopServer
+database: false

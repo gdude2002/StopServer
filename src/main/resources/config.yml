@@ -1,0 +1,9 @@
+# The time to wait for, in the form days:hours:minutes:seconds
+time: "1:2:30:15"  # 1 day, 2 hours, 30 minutes, 15 seconds
+
+# How many ticks are in a second. Set this to your average TPS.
+# If you don't know what this means, leave it at 20.
+tickrate: 20
+
+# Don't touch this, or you'll break things!
+version: 0.0.1

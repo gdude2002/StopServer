@@ -1,0 +1,70 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'build-announcements'
+apply plugin: 'maven'
+apply plugin: 'ivy-publish'
+
+sourceCompatibility = 1.7
+version = '0.0.1'
+group = "me.gserv.stopserver"
+
+repositories {
+    flatDir {
+        dirs 'lib'
+    }
+    // Bukkit
+    maven {
+        url 'http://repo.bukkit.org/content/groups/public/'
+    }
+
+    mavenCentral()
+}
+
+jar {
+    from sourceSets.main.allJava
+    archiveName = "StopServer-${version}.jar"
+}
+
+artifacts {
+    archives jar
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            pom.artifactId = "StopServer"
+            repository(url: "file://localhost/var/www/gserv/cherry/repos/maven/")
+        }
+    }
+}
+
+publishing {
+    publications {
+        ivyJava(IvyPublication) {
+            from components.java
+            module "StopServer"
+        }
+    }
+    repositories {
+        ivy {
+            name "publish"
+            url "/var/www/gserv/cherry/repos/ivy/"
+        }
+    }
+}
+
+gradle.projectsEvaluated {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    }
+}
+
+jar {
+    from sourceSets.main.allJava
+    archiveName = "StopServer-${version}.jar"
+}
+
+
+dependencies {
+    compile 'org.bukkit:bukkit:1.7.9-R0.2'
+}
