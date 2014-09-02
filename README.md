@@ -5,11 +5,10 @@ My plugins: [WordWarning](https://github.com/gdude2002/WordWarning) | [Painter](
 
 ---
 
-**This plugin was created by request for [plugin request thread by runner_z](http://dev.bukkit.org/profiles/runner_z/).**
+**This plugin was created by request for [runner_z](http://dev.bukkit.org/profiles/runner_z/).**
 
 StopServer is a simple plugin that allows you to stop the server after a certain amount of inactivity.
-
-The latest jar is always available [here](http://bamboo.gserv.me/browse/PLUG-LOTBOX/latest/artifact/JOB1/Version-agnostic-jar/LotteryBox.jar).
+The latest jar is always available [here](http://bamboo.gserv.me/browse/PLUG-STOP/latest/artifact/JOB1/Version-agnostic-jar/StopServer.jar).
 Remember, your server must be running **Java 7 or later**. If you need me to compile for lower versions, let me know and I'll make it happen.
 
 Usage
